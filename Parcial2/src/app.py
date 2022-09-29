@@ -1,10 +1,11 @@
-from flask import Flask, render_template, url_for, flash, request, redirect
+from flask import Flask, render_template, url_for, flash, request, redirect,sesion
 from config import *
+from flask.ext.sesion import Sesion
 
+SESSION_TYPE = 'null'
 app = Flask(__name__)
 app.secret_key = 'mysecretkey' # para poder usar flash
-
-sesion = True
+Session(app)
 con_db = get_connection()
 
 #ruta de la pagina principal
